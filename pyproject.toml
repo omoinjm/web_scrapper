@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "web-scrapper"
+version = "0.1.0"
+description = "Crawl a website and archive each page as PDF + Markdown."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "httpx>=0.27.0",
+    "beautifulsoup4>=4.12.3",
+    "lxml>=5.2.1",
+    "playwright>=1.44.0",
+]
+
+[project.scripts]
+web-scrapper = "web_scrapper.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
