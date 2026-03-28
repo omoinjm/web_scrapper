@@ -98,11 +98,14 @@ pip install -r requirements-dev.txt
 python main.py https://example.com
 ```
 
-**Option 2: Install as a package and use the CLI command**
+**Option 2: Install as a package and use the CLI command** (recommended for production)
 
 ```bash
-# Install the package
+# Install the package (creates the `web-scrapper` executable)
 pip install -e .
+
+# Verify installation
+web-scrapper --help
 
 # Run from anywhere
 web-scrapper https://example.com
