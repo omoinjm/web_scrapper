@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import contextlib
 import logging
 from typing import Optional
 from urllib.parse import urlparse
@@ -53,7 +54,7 @@ class SiteArchiver:
         archive_root = self._storage.get_archive_root(self.domain)
         logger.info("Output directory: %s", archive_root)
 
-        with self._robots_checker if self._robots_checker else asyncio.nullcontext():  # type: ignore[attr-defined]
+        with self._robots_checker if self._robots_checker else contextlib.nullcontext():
             async with self._renderer:
                 tasks: list[asyncio.Task] = []
 

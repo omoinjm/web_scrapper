@@ -26,5 +26,9 @@ source .venv/bin/activate
 # Install python dependancy
 pip install -r requirements.txt
 
+# Install Playwright browser and system dependencies
+playwright install chromium
+playwright install-deps chromium
+
 # Install the project in editable mode
 pip install -e .
